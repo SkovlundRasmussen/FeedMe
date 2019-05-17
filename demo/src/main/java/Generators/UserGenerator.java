@@ -35,6 +35,7 @@ public class UserGenerator {
         }
     }
 
+    // Method for generating random users for the DB.
     public void generateUser(int numberOfRandomUsers) {
 
         Random random = new Random();
@@ -46,13 +47,11 @@ public class UserGenerator {
             User tempUser = new User();
             if (i <= numberOfRandomUsers) {
                 randomNumber = random.nextInt(100);
-                System.out.println(randomNumber);
                 tempUser.setFirstname((String) (firstNameList.get(randomNumber)));
                 i++;
             }
             if (j <= numberOfRandomUsers) {
                 randomNumber = random.nextInt(100);
-                System.out.println(randomNumber);
                 tempUser.setLastname((String) (lastNameList.get(randomNumber)));
                 tempUser.setEmail((tempUser.getFirstname() + tempUser.getLastname() + "@gmail.com").toLowerCase());
                 tempUser.setPassword("test123");
@@ -60,16 +59,7 @@ public class UserGenerator {
                 j++;
             }
             userList.add(tempUser);
-
             a++;
         }
-
-        for (Iterator<User> o = userList.iterator(); o.hasNext();) {
-            User user = o.next();
-            System.out.println(user.getFirstname());
-            System
-        }
-
-
     }
 }
