@@ -44,7 +44,7 @@ public class UserController {
 
     //Post create user on signuppage
     @PostMapping(value= {"/signup"})
-    public ModelAndView createUser(@Valid User user, BindingResult bindingResult){
+    public ModelAndView createUser(@Valid User user, BindingResult bindingResult) throws Exception {
         ModelAndView model = new ModelAndView();
         User userExists = userService.findUserByEmail(user.getEmail());
 

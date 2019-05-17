@@ -17,7 +17,7 @@ public class UserGenerator {
     List firstNameList = new ArrayList<String>();
     List lastNameList = new ArrayList<String>();
 
-    List userList = new ArrayList<User>();
+    public List userList = new ArrayList<User>();
 
     public void GenerateNameList() throws FileNotFoundException {
         String firstName;

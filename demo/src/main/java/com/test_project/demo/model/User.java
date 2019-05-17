@@ -4,15 +4,13 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "user")
+@Table(name = "USERS")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "email")
-    private String email;
 
     @Column(name = "firstname")
     private String firstname;
@@ -20,11 +18,12 @@ public class User {
     @Column(name = "lastname")
     private String lastname;
 
+    @Column(name = "email")
+    private String email;
+
+
     @Column(name = "password")
     private String password;
-
-    @Column(name = "active")
-    private int active;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -68,14 +67,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public int getActive() {
-        return active;
-    }
-
-    public void setActive(int active) {
-        this.active = active;
     }
 
     public Set<Role> getRoles() {
